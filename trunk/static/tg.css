@@ -1,0 +1,221 @@
+*
+{
+	font-family:verdana;
+}
+
+body
+{
+	background-color:#032244;
+	color:#f0f0f0;
+	font-size:10.2pt;
+}
+
+a
+{
+	color:#0066ff;
+	text-decoration:none;
+}
+
+a:hover{
+	color:#ff6600;
+	border-bottom:1px solid;
+}
+
+.block
+{
+	margin:1em 2em;
+}
+
+/* */
+
+.success
+{
+	color:Green;
+	background-color:#ccff99;
+	padding:0.4em 0.6em;
+}
+
+.fail
+{
+	color:#990000;
+	background-color:#ffffcc;
+	padding:0.4em 0.6em;
+}
+
+
+/* */
+
+.timeline-menu
+{
+	margin:0.5em 0em;
+	padding:0.4em 1em;
+	border-top:1px solid #003399;
+}
+
+.pagemark
+{
+	text-align:center;
+	width:600px;
+}
+
+#span_new_items_count
+{
+	font-size:8pt;
+}
+
+.new_items_block
+{
+	display:block;
+	width:600px;
+	margin:0px;
+	padding:0px;
+	clear:both;
+}
+
+.post
+{
+	display:block;
+	clear:both;
+	border-bottom:1px solid #003399;
+	width:600px;
+	padding:0.4em 0em;
+}
+
+.post-text
+{
+	display:block;
+	clear:both;
+	margin:0px 0px 0px 4.6em;
+}
+
+.post-text a
+{
+	color:#00ccff;
+}
+
+.post-user
+{
+	color:#ffff99;
+	float:left;
+}
+
+.post-user a
+{
+	color:#ffff99;
+}
+
+.post-date
+{
+	font-size:8pt;
+	float:left;
+	padding:0.2em 1em;
+	color:#0066cc;
+}
+
+.post-client
+{
+	font-size:8pt;
+	float:left;
+	padding:0.2em 1em;
+	color:#0066cc;
+}
+
+.post-client a
+{
+	font-size:8pt;
+	color:#0066cc;
+}
+
+.post-handlers
+{
+	display:block;
+	float:right;
+	padding:0.2em 0em;
+	height:1.4em;
+}
+
+.post-handlers a
+{
+	display:block;
+	float:left;
+	margin:0px 0.5em;
+	font-size:8pt;
+	color:#0066cc;
+}
+
+.post-handlers a:hover
+{
+}
+
+.post-handlers a.reply
+{
+}
+
+.post-handlers a.rt, .post-handlers a.retweet
+{
+}
+
+/* user */
+.userinfo
+{
+	display:block;
+	width:600px;
+	clear:both;
+	border-bottom:1px solid #0066cc;
+	padding:0px 0px 0.5em 0px;
+	margin:0.5em 0px;
+}
+
+.userinfo .icon
+{
+	width:60px;
+	float:left;
+}
+
+.userinfo .screen_name
+{
+	font-weight:bold;
+}
+
+.userinfo .name
+{
+	font-size:9pt;
+}
+
+.userinfo .fo_state
+{
+	font-size:8pt;
+}
+
+.userinfo .desc
+{
+	font-size:9pt;
+	margin:0px 0px 0px 60px;
+}
+
+.userinfo .link
+{
+	font-size:8pt;
+	margin:0px 0px 0px 60px;
+}
+
+.userinfo .follow
+{
+	font-size:9pt;
+	margin:4px 0px 0px 60px;
+	padding:0.2em 0.4em;
+	background-color:#003399;
+	width:150px;
+	text-align:center;
+}
+
+.userinfo .follow a
+{
+	font-size:9pt;
+}
+
+
+
+
+
+
