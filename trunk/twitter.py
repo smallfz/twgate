@@ -345,7 +345,7 @@ def user_api(clientinfo, acc_token, base_url, need_auth):
 
 @get("/api/:apipath#.+#")
 @post("/api/:apipath#.+#")
-def show_current_session(apipath):
+def process_user_api(apipath):
 	service = UserDb()
 	req_text = ''
 	sessionkey = ''
@@ -373,7 +373,7 @@ def show_current_session(apipath):
 
 @get("/searchapi/:apipath#.+#")
 @post("/searchapi/:apipath#.+#")
-def show_current_session(apipath):
+def process_search_api(apipath):
 	service = UserDb()
 	req_text = ''
 	sessionkey = ''
@@ -910,7 +910,7 @@ def follow_user(tw_userid):
 @get("/unfollow/:tw_userid#\d+#")
 @get("/unfollow/:tw_userid#\d+#/")
 @auth_required()
-def follow_user(tw_userid):
+def unfollow_user(tw_userid):
 	tw_userid = int(tw_userid)
 	if tw_userid>0:
 		# twitter_follow_user(
