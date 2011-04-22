@@ -4,7 +4,9 @@ import sqlite3_helper as sh
 import hashlib
 from time import time as now
 import datetime
+from log import logger
 
+_log_enabled = True
 _dbpath = 'users.db'
 _publickey = '''34bnm6278c4w630345jk43lkx83402hgvcxfdfsdfasfdaqew
 qewf349327weertetytjhjr2xd83ioipovo939475846vbnvjzjghdgkw4345a9r56
@@ -141,6 +143,12 @@ class UserDb(object):
 		if len(rs)>0:
 			if rs[0]['passhash'].lower() == self.password_hash(password).lower():
 				user = rs[0]
+				if _log_enabled: logger.info(u'user "%s" login successfully!' % email)
+			else:
+				if _log_enabled:
+					logger.warn(u'user submit incorrect password. username=%s, pwd=%s' % (email, password))
+		else:
+			if _log_enabled: logger.warn(u'user not found. username=%s' % email)
 		db.close()
 		return user
 	
