@@ -4,9 +4,10 @@
 
 import os, sys
 
-os.chdir(os.path.dirname(__file__))
-os.chdir('/home/small/www/twgate')
-sys.path.append('/home/small/www/twgate')
+startup_dir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(startup_dir)
+if startup_dir not in sys.path:
+	sys.path.append(startup_dir)
 
 import bottle
 from gate import *
