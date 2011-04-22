@@ -62,13 +62,13 @@ def localize_post(post):
 def write_log(req, resp):
 	return
 	# write a log
-	log = open('proxy.log', 'ab+')
-	log.write('%s\n' % req)
-	log.write('--------\nresponse: %s\n' % resp.status)
-	log.write('content-type: %s\n' % resp.content_type)
-	log.write(resp.text)
-	log.write('\n\n\n')
-	log.close()
+	# log = open('proxy.log', 'ab+')
+	# log.write('%s\n' % req)
+	# log.write('--------\nresponse: %s\n' % resp.status)
+	# log.write('content-type: %s\n' % resp.content_type)
+	# log.write(resp.text)
+	# log.write('\n\n\n')
+	# log.close()
 
 class TwClient(object):
 	

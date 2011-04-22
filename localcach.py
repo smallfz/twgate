@@ -143,18 +143,25 @@ class TwLocalCache(object):
 		if tw_userid>0:
 			sql.append(' and tw_userid=%s ' % tw_userid)
 		if since_id>0:
-			sql.append(" and id>%s" % since_id)
-		sql.append('order by id desc')
+			sql.append(" and id>%s and id!=%s " % (since_id, since_id))
+		sql.append(' order by id desc ')
 		if offset>=0 and count>0:
-			sql.append(" limit %s, %s" % (offset, count))
+			sql.append(" limit %s, %s " % (offset, count))
 		rs = db.read(''.join(sql))
+		rowid = None
 		if len(rs)>0:
 			for row in rs:
 				try:
+					rowid = row['id']
 					results.append(json.loads(row['json_content']))
 				except:
 					pass
 		db.close()
+		# log = open('log', 'ab+')
+		# log.write(''.join(sql))
+		# log.write(' ==> %s results. ' % len(results))
+		# log.write(' rowid=%s\r\n' % rowid if rowid else 'None')
+		# log.close()
 		return results
 
 
