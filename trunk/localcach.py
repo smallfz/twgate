@@ -144,9 +144,8 @@ class TwLocalCache(object):
 			sql.append(' and tw_userid=%s ' % tw_userid)
 		if since_id>0:
 			sql.append(" and id>%s" % since_id)
-			sql.append('order by id desc')
-		elif offset>=0 and count>0:
-			sql.append('order by id desc')
+		sql.append('order by id desc')
+		if offset>=0 and count>0:
 			sql.append(" limit %s, %s" % (offset, count))
 		rs = db.read(''.join(sql))
 		if len(rs)>0:

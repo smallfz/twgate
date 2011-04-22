@@ -10,7 +10,7 @@ if startup_dir not in sys.path:
 	sys.path.append(startup_dir)
 
 import bottle
-from gate import *
-
+import gate
+bottle.TEMPLATE_PATH.insert(0, os.path.join(startup_dir, 'views'))
 application = bottle.default_app()
 
