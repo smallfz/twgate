@@ -13,9 +13,6 @@ from apiproxy import *
 
 debug(True)
 
-# abort: (404, 'not found')
-# redirect: ('/url')
-
 @route("/static/:path#.+#")
 def staticfiles(path):
 	return static_file(path, root="./static")

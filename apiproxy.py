@@ -12,12 +12,6 @@ from http import WebRequest, WebResponse
 @get("/proxy")
 def api_proxy_home():
 	response.headers["content-type"] = "text/plain; charset=utf-8"
-	# write a log
-	log = open('proxy.log', 'ab+')
-	log.write('try to access "/proxy/"...')
-	log.write('\n\n\n')
-	log.close()
-	#
 	return """Welcome to TwGate proxy.
 
 	This is a public accessable SSL twitter api proxy,
@@ -53,7 +47,7 @@ def do_http_proxy(base_url, host):
 		for h in copying_headers:
 			if k.lower().startswith(h):
 				x_headers[k.lower()] = request.headers[k]
-	x_headers['host'] = host #'api.twitter.com'
+	x_headers['host'] = host # 'api.twitter.com'
 	if len(request.POST)>0:
 		x_headers['content-type'] = 'application/x-www-form-urlencoded'
 		x_post = {}
@@ -61,14 +55,6 @@ def do_http_proxy(base_url, host):
 		x_req.data = urlencode(x_post)
 	x_req.headers = x_headers
 	x_response = x_req.send()
-	# write a log
-	log = open('proxy.log', 'ab+')
-	log.write('%s\n' % x_req)
-	log.write('--------\nresponse: %s\n' % x_response.status)
-	log.write('content-type: %s\n' % x_response.content_type)
-	log.write(x_response.text)
-	log.write('\n\n\n')
-	log.close()
 	# transfer response
 	response.status = x_response.status
 	response.content_type = x_response.content_type
